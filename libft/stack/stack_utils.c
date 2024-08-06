@@ -24,7 +24,6 @@ void		*ft_stpop(t_stack *stack)
 	t_list *top = stack->elem;
 	void	*content = top->content;
 	stack->elem = top->next;
-	free(top->content);
 	free(top);
 	return (content);
 }

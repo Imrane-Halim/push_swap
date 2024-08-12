@@ -14,7 +14,7 @@ void    st_print(t_stack *a, t_stack *b)
 
 int main(int ac, char **av)
 {
-    t_stack *a = NULL, *b = NULL;
+    t_stack *a, *b = NULL;
     a = st_init(ac, av);
     st_print(a, b);
     ft_stclear(&a);

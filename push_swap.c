@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include "opirations/ft_rrotate.c"
-//#include "libft/stack/stack_utils.c"
+#include "srcs/init_stack.c"
 
 void    st_print(t_stack *a, t_stack *b) 
 {
@@ -16,18 +15,7 @@ void    st_print(t_stack *a, t_stack *b)
 int main(int ac, char **av)
 {
     t_stack *a = NULL, *b = NULL;
-    ft_stpush(&a, ft_stnew(1));
-    ft_stpush(&a, ft_stnew(2));
-    ft_stpush(&a, ft_stnew(3));
-
-    ft_stpush(&b, ft_stnew(7));
-    ft_stpush(&b, ft_stnew(8));
-    ft_stpush(&b, ft_stnew(9));
-
-    rrr(&a, &b);
+    a = st_init(ac, av);
     st_print(a, b);
-
-    ft_stclear(&a);
-    ft_stclear(&b);
     return 0;
 }

@@ -8,6 +8,7 @@ t_stack	*ft_stnew(long n)
 		return (NULL);
 	new->n = n;
 	new->next = NULL;
+	return (new);
 }
 
 void	ft_stpush(t_stack **stack, t_stack *elem)

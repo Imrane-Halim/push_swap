@@ -17,5 +17,6 @@ int main(int ac, char **av)
     t_stack *a = NULL, *b = NULL;
     a = st_init(ac, av);
     st_print(a, b);
+    ft_stclear(&a);
     return 0;
 }

@@ -4,10 +4,8 @@
 t_stack	*st_init(int ac, char **av)
 {
 	t_stack *stack;
-	int i;
-	stack = (t_stack *)malloc(sizeof(t_stack));
-	if (!stack)
-		return (NULL);
+	int		i;
+
 	i = 1;
 	stack = NULL;
 	while (i < ac)

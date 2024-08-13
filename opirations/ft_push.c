@@ -1,4 +1,4 @@
-#include "ops.h"
+#include "../incs/srcs.h"
 
 void    st_push(t_stack **dst, t_stack **src)
 {

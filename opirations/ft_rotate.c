@@ -1,4 +1,4 @@
-#include "ops.h"
+#include "../incs/srcs.h"
 
 void    st_rotate(t_stack **stack)
 {

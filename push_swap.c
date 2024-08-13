@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include "srcs/init_stack.c"
-#include "opirations/ops.h"
+#include "incs/srcs.h"
+
 
 void    st_print(t_stack *a, t_stack *b) 
 {
     while (a || b)
     {
-        printf("  |  %d  | |  %d  |\n", (a != NULL) ? a->n : 0, (b != NULL) ? b->n : 0);
+        printf("  |  %ld  | |  %ld  |\n", (a != NULL) ? a->n : 0, (b != NULL) ? b->n : 0);
         a = (a != NULL) ? a->next : NULL;
         b = (b != NULL) ? b->next : NULL;
     }

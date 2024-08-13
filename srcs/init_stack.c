@@ -8,6 +8,8 @@ int	are_num(int ac, char **av)
 	while (--ac >= 1)
 	{
 		i = 0;
+		if (av[ac][i] == '-' || av[ac][i] == '+')
+			i++;
 		while(av[ac][i])
 		{
 			if (!ft_isdigit(av[ac][i]))

@@ -7,7 +7,7 @@ void	st_rrotate(t_stack **stack)
 	t_stack	*top;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-        return; // stack is empty or has only one element, nothing to rotate
+        return ;
 		
 	top = (*stack);
 	pre_last = top;

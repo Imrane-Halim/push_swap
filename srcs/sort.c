@@ -33,10 +33,14 @@ void    tiny_sort(t_stack **stack)
     t_stack *mx;
 
     mx = max(*stack);
-    if (*stack == mx)
-        ra(stack);
-    else if ((*stack)->next == mx)
-        rra(stack);
+    if (ft_stsize(*stack) > 2)
+    {
+        if (*stack == mx)
+            ra(stack);
+        else if ((*stack)->next == mx)
+            rra(stack);
+    }
     if ((*stack)->n > (*stack)->next->n)
         sa(stack);
 }
+

@@ -20,8 +20,7 @@ int	main(int ac, char **av)
 
 	b = NULL;
 	a = st_init(ac, av);
-	if (a == NULL)
-		error_handler();
+	
 	sa(&a);
 	sb(&b);
 	ss(&a, &b);

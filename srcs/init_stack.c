@@ -46,6 +46,7 @@ int	is_valid(int ac, char **av)
 t_stack	*st_init(int ac, char **av)
 {
 	t_stack	*stack;
+	t_stack	*tmp;
 
 	if (!is_valid(ac, av))
 		error_handler();
@@ -54,7 +55,10 @@ t_stack	*st_init(int ac, char **av)
 	stack = NULL;
 	while (--ac >= 1)
 	{
-		ft_stpush(&stack, ft_stnew(ft_atoi(av[ac])));
+		tmp = ft_stnew(ft_atoi(av[ac]));
+		if (!tmp)
+			error_handler();
+		ft_stpush(&stack, tmp);
 	}
 	return (stack);
 }

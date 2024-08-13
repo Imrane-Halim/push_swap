@@ -2,7 +2,7 @@
 
 t_stack	*st_init(int ac, char **av)
 {
-	t_stack *stack;
+	t_stack	*stack;
 	int		i;
 
 	i = 1;

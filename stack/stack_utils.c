@@ -2,7 +2,8 @@
 
 t_stack	*ft_stnew(long n)
 {
-	t_stack *new;
+	t_stack	*new;
+
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 		return (NULL);
@@ -15,7 +16,8 @@ void	ft_stpush(t_stack **stack, t_stack *elem)
 {
 	if (!elem)
 		return ;
-	if (*stack == NULL) {
+	if (*stack == NULL)
+	{
 		*stack = elem;
 		return ;
 	}
@@ -25,7 +27,8 @@ void	ft_stpush(t_stack **stack, t_stack *elem)
 
 void	ft_stpop(t_stack **stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
+
 	if (*stack == NULL)
 		return ;
 	tmp = (*stack);
@@ -38,9 +41,10 @@ long	ft_stpeek(t_stack *stack)
 	return (stack->n);
 }
 
-int		ft_stsize(t_stack *stack)
+int	ft_stsize(t_stack *stack)
 {
-	int i;
+	int	i;
+
 	i = 0;
 	while (stack)
 	{
@@ -50,7 +54,7 @@ int		ft_stsize(t_stack *stack)
 	return (i);
 }
 
-int		ft_stisempty(t_stack *stack)
+int	ft_stisempty(t_stack *stack)
 {
 	return (ft_stsize(stack) == 0);
 }

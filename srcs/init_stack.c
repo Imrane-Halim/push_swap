@@ -9,7 +9,11 @@ int	are_num(int ac, char **av)
 	{
 		i = 0;
 		if (av[ac][i] == '-' || av[ac][i] == '+')
+		{
 			i++;
+			if (!av[ac][i])
+				return (0);
+		}
 		while(av[ac][i])
 		{
 			if (!ft_isdigit(av[ac][i]))

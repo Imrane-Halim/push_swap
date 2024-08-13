@@ -1,4 +1,3 @@
-CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
 INC			= incs
 
@@ -17,17 +16,17 @@ all: $(NAME)
 
 $(NAME): $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
 	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS) $(LIBFT) $(NAME).c  -I INC -o $(NAME)
+	$(CC) $(CFLAGS) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS) $(LIBFT) -fsanitize=address $(NAME).c  -I INC -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(MAKE) clean -C ./libft
-	rm -f $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
+	$(RM) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
-	rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all

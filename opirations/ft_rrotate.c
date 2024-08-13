@@ -6,6 +6,9 @@ void	st_rrotate(t_stack **stack)
 	t_stack	*last;
 	t_stack	*top;
 
+	if (*stack == NULL || (*stack)->next == NULL)
+        return; // stack is empty or has only one element, nothing to rotate
+		
 	top = (*stack);
 	pre_last = top;
 	while (pre_last->next->next != NULL)
@@ -19,15 +22,18 @@ void	st_rrotate(t_stack **stack)
 void	rra(t_stack **a)
 {
 	st_rrotate(a);
+	write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack **b)
 {
 	st_rrotate(b);
+	write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack **a, t_stack **b)
 {
-	rra(a);
-	rrb(b);
+	st_rrotate(a);
+	st_rrotate(b);
+	write(1, "rrr\n", 4);
 }

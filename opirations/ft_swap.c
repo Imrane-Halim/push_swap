@@ -18,15 +18,18 @@ void	st_swap(t_stack **stack)
 void	sa(t_stack **stack)
 {
 	st_swap(stack);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_stack **stack)
 {
 	st_swap(stack);
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_stack **a, t_stack **b)
 {
-	sa(a);
-	sb(b);
+	st_swap(a);
+	st_swap(b);
+	write(1, "ss\n", 3);
 }

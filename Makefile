@@ -13,6 +13,8 @@ STACK_OBJS	= $(STACK:.c=.o)
 NAME		= push_swap
 LIBFT		= ./libft/libft.a
 
+all: $(NAME)
+
 $(NAME): $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
 	$(MAKE) -C ./libft
 	$(CC) $(CFLAGS) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS) $(LIBFT) $(NAME).c  -I INC -o $(NAME)
@@ -21,10 +23,11 @@ $(NAME): $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(MAKE) fclean -C ./libft
+	$(MAKE) clean -C ./libft
 	rm -f $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
 
 fclean: clean
+	$(MAKE) fclean -C ./libft
 	rm -f $(NAME)
 
 re: fclean all

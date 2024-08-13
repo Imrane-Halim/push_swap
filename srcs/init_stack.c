@@ -43,6 +43,16 @@ int	is_valid(int ac, char **av)
 	return (1);
 }
 
+int	is_sorted(int ac, char **av)
+{
+	while (--ac >= 1)
+	{
+		if (ft_atoi(av[ac]) < ft_atoi(av[ac - 1]))
+			return (0);
+	}
+	return (1);
+}
+
 t_stack	*st_init(int ac, char **av)
 {
 	t_stack	*stack;
@@ -50,7 +60,7 @@ t_stack	*st_init(int ac, char **av)
 
 	if (!is_valid(ac, av))
 		error_handler();
-	if (ac < 3)
+	if (ac < 3 || is_sorted(ac, av))
 		exit(0);
 	stack = NULL;
 	while (--ac >= 1)

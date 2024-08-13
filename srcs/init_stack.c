@@ -21,9 +21,9 @@ int	are_num(int ac, char **av)
 int are_duplicates(int ac, char **av)
 {
 	int	i;
-	while (--ac > 1)
+	while (--ac >= 1)
 	{
-		i = 0;
+		i = 1;
 		while (i < ac)
 		{
 			if (ft_atoi(av[ac]) == ft_atoi(av[i]))

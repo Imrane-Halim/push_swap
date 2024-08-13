@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 		tiny_sort(&a);
 	
 
-	st_print(a);
+	//st_print(a);
 	ft_stclear(&a);
 	ft_stclear(&b);
 	return (0);

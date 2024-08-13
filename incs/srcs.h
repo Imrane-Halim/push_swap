@@ -24,3 +24,6 @@ void	rrr(t_stack **a, t_stack **b);
 
 t_stack	*st_init(int ac, char **av);
 void	error_handler(void);
+
+// sorting stuff
+void    tiny_sort(t_stack **stack);

@@ -1,4 +1,4 @@
-#include "../libft/stack/stack_utils.c"
+#include "ops.h"
 
 void    st_swap(t_stack **stack)
 {

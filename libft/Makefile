@@ -1,6 +1,6 @@
 NAME	= libft.a
 CFLAGS	= -Wall -Wextra -Werror
-SRCS	= $(wildcard srcs/*.c) $(wildcard stack/*.c)
+SRCS	= $(wildcard srcs/*.c)
 OBJS	= $(SRCS:.c=.o)
 BONUS 	= $(wildcard srcs/*_bonus.c)
 BOBJS 	= $(BONUS:.c=.o)

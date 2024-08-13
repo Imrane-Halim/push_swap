@@ -1,4 +1,4 @@
-#include "../libft/stack/stack_utils.c"
+#include "ops.h"
 
 void    st_push(t_stack **dst, t_stack **src)
 {

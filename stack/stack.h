@@ -1,4 +1,4 @@
-#include "../srcs/libft.h"
+#include <stdlib.h>
 
 typedef struct s_stack
 {

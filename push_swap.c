@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "srcs/init_stack.c"
+#include "opirations/ops.h"
 
 void    st_print(t_stack *a, t_stack *b) 
 {

@@ -1,5 +1,5 @@
-#include "../libft/stack/stack_utils.c"
-#include "../libft/srcs/ft_atoi.c"
+#include "../stack/stack.h"
+#include "../libft/srcs/libft.h"
 
 t_stack	*st_init(int ac, char **av)
 {

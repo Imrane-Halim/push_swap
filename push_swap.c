@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	b = NULL;
 	a = st_init(ac, av);
-
+	
 	st_print(a, b);
 	if (ft_stsize(a) <= 3)
 		tiny_sort(&a);

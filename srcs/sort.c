@@ -44,6 +44,17 @@ void    tiny_sort(t_stack **stack)
         sa(stack);
 }
 
+int     st_sorted(t_stack *stack)
+{
+    while (stack && stack->next != NULL)
+    {
+        if (stack->n > stack->next->n)
+            return (0);
+        stack = stack->next;
+    }
+    return (1);
+}
+
 void    sort(t_stack **a, t_stack **b)
 {
     pb(b, a);

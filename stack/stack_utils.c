@@ -1,6 +1,6 @@
 #include "stack.h"
 
-t_stack	*ft_stnew(long n)
+t_stack	*ft_stnew(int n)
 {
 	t_stack	*new;
 
@@ -36,7 +36,7 @@ void	ft_stpop(t_stack **stack)
 	free(tmp);
 }
 
-long	ft_stpeek(t_stack *stack)
+int	ft_stpeek(t_stack *stack)
 {
 	return (stack->n);
 }

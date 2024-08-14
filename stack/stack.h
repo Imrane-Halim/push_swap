@@ -6,7 +6,7 @@ typedef struct s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-t_stack				*ft_stnew(long n);
+t_stack				*ft_stnew(int n);
 void				ft_stpush(t_stack **stack, t_stack *content);
 void				ft_stpop(t_stack **stack);
 int				ft_stpeek(t_stack *stack);

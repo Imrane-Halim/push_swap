@@ -5,7 +5,7 @@ void	st_print(t_stack *a)
 {
 	while (a)
 	{
-		printf("    %ld\n", (a != NULL) ? a->n : 0);
+		printf("    %d\n", (a != NULL) ? a->n : 0);
 		a = (a != NULL) ? a->next : NULL;
 	}
 	printf("  ------\n    a\n");

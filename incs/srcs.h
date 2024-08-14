@@ -35,3 +35,4 @@ void	error_handler(void);
 // sorting stuff
 int     is_sorted(int ac, char **av);
 void    tiny_sort(t_stack **stack);
+void    sort(t_stack **a, t_stack **b);

@@ -1,5 +1,15 @@
 #include "../incs/srcs.h"
 
+int	is_sorted(int ac, char **av)
+{
+	while (--ac >= 1)
+	{
+		if (ft_atoi(av[ac]) < ft_atoi(av[ac - 1]))
+			return (0);
+	}
+	return (1);
+}
+
 t_stack	*st_init(int ac, char **av)
 {
 	t_stack	*stack;

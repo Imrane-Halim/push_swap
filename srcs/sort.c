@@ -28,16 +28,6 @@ t_stack  *min(t_stack *stack)
     return (min);
 }
 
-int	is_sorted(int ac, char **av)
-{
-	while (--ac >= 1)
-	{
-		if (ft_atoi(av[ac]) < ft_atoi(av[ac - 1]))
-			return (0);
-	}
-	return (1);
-}
-
 void    tiny_sort(t_stack **stack)
 {
     t_stack *mx;
@@ -54,3 +44,8 @@ void    tiny_sort(t_stack **stack)
         sa(stack);
 }
 
+void    sort(t_stack **a, t_stack **b)
+{
+    pb(b, a);
+    pb(b, a);
+}

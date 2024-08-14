@@ -6,6 +6,7 @@
 # include <unistd.h>
 
 /// -- mandatory part 1
+int					is_space(char c);
 int					ft_atoi(char const *s);
 void				ft_bzero(void *s, size_t n);
 void				*ft_calloc(size_t nmemb, size_t size);

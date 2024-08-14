@@ -26,4 +26,5 @@ t_stack	*st_init(int ac, char **av);
 void	error_handler(void);
 
 // sorting stuff
+int     is_sorted(int ac, char **av);
 void    tiny_sort(t_stack **stack);

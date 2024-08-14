@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+// input validation
+int	are_num(int ac, char **av);
+int are_duplicates(int ac, char **av);
+int is_in_range(char *n);
+int	is_valid(int ac, char **av);
+
+
 // push the top elem of a stack to another
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **b, t_stack **a);

@@ -1,4 +1,4 @@
-#include "incs/srcs.h"
+#include "../incs/srcs.h"
 #include <stdio.h>
 
 void	st_print(t_stack *a, t_stack *b)

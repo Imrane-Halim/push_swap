@@ -55,8 +55,27 @@ int     st_sorted(t_stack *stack)
     return (1);
 }
 
+void    sort_until_3(t_stack **a, t_stack **b)
+{
+    while (ft_stsize(*a) > 3)
+    {
+        if ((*a)->n < (*a)->next->n && (*b)->n > (*b)->next->n)
+        {
+            ss(a, b);
+            pb(b, a);
+        }
+        else if ((*a)->n < (*a)->next->n)
+        {
+            sa(a);
+            pb(b, a);
+        }
+        if ((*b)->n > (*b)->next->n)
+            sb(b);
+        
+    }
+}
+
 void    sort(t_stack **a, t_stack **b)
 {
-    pb(b, a);
-    pb(b, a);
+    sort_until_3(a, b);
 }

@@ -1,6 +1,6 @@
 #include "../incs/srcs.h"
 
-t_stack  *max(t_stack *stack)
+t_stack  *st_max(t_stack *stack)
 {
     t_stack *max;
 
@@ -14,7 +14,7 @@ t_stack  *max(t_stack *stack)
     return (max);
 }
 
-t_stack  *min(t_stack *stack)
+t_stack  *st_min(t_stack *stack)
 {
     t_stack *min;
 
@@ -26,6 +26,15 @@ t_stack  *min(t_stack *stack)
         stack = stack->next;
     }
     return (min);
+}
+
+t_stack *st_get_last(t_stack *stack)
+{
+    if (!stack)
+        return (NULL);
+    while (stack->next)
+        stack = stack->next;
+    return (stack);
 }
 
 void    tiny_sort(t_stack **stack)
@@ -57,22 +66,6 @@ int     st_sorted(t_stack *stack)
 
 void    sort_until_3(t_stack **a, t_stack **b)
 {
-    while (ft_stsize(*a) > 3)
-    {
-        if ((*a)->n < (*a)->next->n && (*b)->n > (*b)->next->n)
-        {
-            ss(a, b);
-            pb(b, a);
-        }
-        else if ((*a)->n < (*a)->next->n)
-        {
-            sa(a);
-            pb(b, a);
-        }
-        if ((*b)->n > (*b)->next->n)
-            sb(b);
-        
-    }
 }
 
 void    sort(t_stack **a, t_stack **b)

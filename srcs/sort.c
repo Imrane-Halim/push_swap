@@ -41,7 +41,7 @@ void    tiny_sort(t_stack **stack)
 {
     t_stack *mx;
 
-    mx = max(*stack);
+    mx = st_max(*stack);
     if (ft_stsize(*stack) > 2)
     {
         if (*stack == mx)
@@ -55,7 +55,9 @@ void    tiny_sort(t_stack **stack)
 
 int     st_sorted(t_stack *stack)
 {
-    while (stack && stack->next != NULL)
+    if (!stack)
+        return (1);
+    while (stack->next)
     {
         if (stack->n > stack->next->n)
             return (0);
@@ -64,11 +66,9 @@ int     st_sorted(t_stack *stack)
     return (1);
 }
 
-void    sort_until_3(t_stack **a, t_stack **b)
-{
-}
 
 void    sort(t_stack **a, t_stack **b)
 {
-    sort_until_3(a, b);
+     (void)a;
+     (void)b;
 }

@@ -16,7 +16,7 @@ all: $(NAME)
 
 $(NAME): $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
 	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS) $(LIBFT) -fsanitize=address -I INC -o $(NAME)
+	$(CC) $(CFLAGS) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS) $(LIBFT) -fsanitize=leak -I INC -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

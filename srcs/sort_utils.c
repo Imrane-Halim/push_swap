@@ -49,3 +49,37 @@ int     st_sorted(t_stack *stack)
     }
     return (1);
 }
+
+t_stack	*get_cheapest(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
+void    prep_for_push(t_stack **stack, t_stack *top, char st)
+{
+    while (*stack != top)
+    {
+        if (st == 'a')
+        {
+            if (top->above_median)
+                ra(stack);
+            else
+                rra(stack);
+        }
+        else if (st == 'b')
+        {
+            if (top->above_median)
+                rb(stack);
+            else
+                rrb(stack);
+        }
+    }
+}

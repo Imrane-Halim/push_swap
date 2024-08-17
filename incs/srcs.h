@@ -1,7 +1,6 @@
 #include "../libft/srcs/libft.h"
 #include "../stack/stack.h"
-#include <stdlib.h>
-#include <unistd.h>
+#include <limits.h>
 
 // input validation
 int	are_num(int ac, char **av);
@@ -23,11 +22,13 @@ void	ss(t_stack **a, t_stack **b);
 void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
+void    rotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 
 // reverse rotate
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
+void    rrotate_both(t_stack **a, t_stack **b, t_stack *cheapest);
 
 t_stack	*st_init(int ac, char **av);
 void	error_handler(void);
@@ -40,3 +41,8 @@ int     is_sorted(int ac, char **av);
 void    tiny_sort(t_stack **stack);
 int     st_sorted(t_stack *stack);
 void    sort(t_stack **a, t_stack **b);
+void    current_index(t_stack *stack);
+void    init_nodes_a(t_stack *a, t_stack *b);
+void    init_nodes_b(t_stack *a, t_stack *b);
+void    prep_for_push(t_stack **stack, t_stack *top, char st);
+t_stack *get_cheapest(t_stack *stack);

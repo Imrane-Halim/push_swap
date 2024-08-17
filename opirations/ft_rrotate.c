@@ -37,3 +37,11 @@ void	rrr(t_stack **a, t_stack **b)
 	st_rrotate(b);
 	write(1, "rrr\n", 4);
 }
+
+void    rrotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
+{
+    while (*b != cheapest->target && *a != cheapest)
+		rr(a, b);
+	current_index(*a);
+	current_index(*b);
+}

@@ -32,3 +32,11 @@ void	rr(t_stack **a, t_stack **b)
 	st_rotate(b);
 	write(1, "rr\n", 3);
 }
+
+void    rotate_both(t_stack **a, t_stack **b, t_stack *cheapest)
+{
+    while (*b != cheapest->target && *a != cheapest)
+        rr(a, b);
+    current_index(*a);
+    current_index(*b);
+}

@@ -16,6 +16,37 @@ void    tiny_sort(t_stack **stack)
         sa(stack);
 }
 
+void    move_a_to_b(t_stack **a, t_stack **b)
+{
+    t_stack *cheapest;
+    
+    cheapest = get_cheapest(*a);
+    if (cheapest->above_median && cheapest->target->above_median)
+        rotate_both(a, b, cheapest);
+    else if (!(cheapest->above_median) && !(cheapest->target->above_median))
+        rrotate_both(a, b, cheapest);
+    prep_for_push(a, cheapest, 'a');
+    prep_for_push(a, cheapest->target, 'b');
+    pb(b, a);
+}
+
+void    move_b_to_a(t_stack **a, t_stack **b)
+{
+    prep_for_push(a, (*b)->target, 'a');
+    pa(a, b);
+}
+
+void    min_on_top(t_stack **a)
+{
+    while ((*a)->n != st_min(*a)->n)
+    {
+        if (st_min(*a)->above_median)
+            ra(a);
+        else
+            rra(a);
+    }
+}
+
 void    sort(t_stack **a, t_stack **b)
 {
     int size;

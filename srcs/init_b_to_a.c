@@ -8,7 +8,7 @@ void    set_target_b(t_stack *a, t_stack *b)
 
     while (b)
     {
-        best_match_index = LONG_MIN;
+        best_match_index = LONG_MAX;
         current = a;
         while (current)
         {
@@ -19,7 +19,7 @@ void    set_target_b(t_stack *a, t_stack *b)
             }
             current = current->next;
         }
-        if (best_match_index == LONG_MIN)
+        if (best_match_index == LONG_MAX)
             b->target = st_min(a);
         else
             b->target = target;

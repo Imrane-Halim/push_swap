@@ -73,6 +73,7 @@ void    prep_for_push(t_stack **stack, t_stack *top, char st)
                 ra(stack);
             else
                 rra(stack);
+            write(1, "aaaa", 4);
         }
         else if (st == 'b')
         {
@@ -80,6 +81,7 @@ void    prep_for_push(t_stack **stack, t_stack *top, char st)
                 rb(stack);
             else
                 rrb(stack);
+            write(1, "bbbb", 4);
         }
     }
 }

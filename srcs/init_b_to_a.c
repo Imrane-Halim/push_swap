@@ -20,7 +20,7 @@ void    set_target_b(t_stack *a, t_stack *b)
             current = current->next;
         }
         if (best_match_index == LONG_MIN)
-            b->target = st_max(a);
+            b->target = st_min(a);
         else
             b->target = target;
         b = b->next;

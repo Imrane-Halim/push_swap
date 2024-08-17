@@ -26,7 +26,7 @@ void    move_a_to_b(t_stack **a, t_stack **b)
     else if (!(cheapest->above_median) && !(cheapest->target->above_median))
         rrotate_both(a, b, cheapest);
     prep_for_push(a, cheapest, 'a');
-    prep_for_push(a, cheapest->target, 'b');
+    prep_for_push(b, cheapest->target, 'b');
     pb(b, a);
 }
 

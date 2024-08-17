@@ -33,6 +33,9 @@ t_stack	*st_init(int ac, char **av);
 void	error_handler(void);
 
 // sorting stuff
+t_stack  *st_max(t_stack *stack);
+t_stack  *st_min(t_stack *stack);
+t_stack *st_get_last(t_stack *stack);
 int     is_sorted(int ac, char **av);
 void    tiny_sort(t_stack **stack);
 int     st_sorted(t_stack *stack);

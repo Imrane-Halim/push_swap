@@ -4,7 +4,7 @@ Push Swap 🔄💻
 **Description** 📝
 ----------------
 
-Push Swap is a sorting algorithm project that uses a stack-based approach to sort a list of integers. The goal is to sort the list in the fewest number of operations possible. This project is part of the 42 school curriculum and is a great exercise in algorithmic thinking and problem-solving.
+Push Swap is a sorting algorithm project that uses the Turk Algorithm, a stack-based approach to sort a list of integers. The goal is to sort the list in the fewest number of operations possible. This project is part of the 42 school curriculum and is a great exercise in algorithmic thinking and problem-solving.
 
 **Goals** 🎯
 ---------

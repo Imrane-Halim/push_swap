@@ -3,6 +3,12 @@
 typedef struct s_stack
 {
 	int			n;
+	int			index;
+	int			cost;
+	int			above_median;
+	int			cheapest;
+
+	struct s_stack  *target;
 	struct s_stack	*next;
 }					t_stack;
 

@@ -1,32 +1,34 @@
-CFLAGS		= -Wall -Werror -Wextra
-INC			= incs
+NAME	= 	push_swap
 
-OPS_SRC		= $(wildcard opirations/*.c)
-SRCS		= $(wildcard srcs/*.c)
-STACK		= $(wildcard stack/*.c)
+SRC		= 	parse_numbers.c		\
+			parse_utils.c		\
+			push_swap.c			\
+			rules.c				\
+			other_utils.c		\
+			sort.c
 
-OPS_OBJS	= $(OPS_SRC:.c=.o)
-SRC_OBJS	= $(SRCS:.c=.o)
-STACK_OBJS	= $(STACK:.c=.o)
-
-NAME		= push_swap
-LIBFT		= ./libft/libft.a
+CFLAGS	= -Wall -Wextra -Werror
+LIBFT	= ./libft/libft.a
+OBJ		= $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
-	$(MAKE) -C ./libft
-	$(CC) $(CFLAGS) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS) $(LIBFT) -fsanitize=leak -I INC -o $(NAME)
+$(NAME): $(OBJ)
+	$(MAKE) -C ./libft --silent
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	$(MAKE) clean -C ./libft
-	$(RM) $(OPS_OBJS) $(SRC_OBJS) $(STACK_OBJS)
+	$(MAKE) -C ./libft clean --silent
+	$(RM) $(OBJ)
 
 fclean: clean
-	$(MAKE) fclean -C ./libft
+	$(MAKE) -C ./libft fclean --silent
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
+.SECONDARY: $(OBJ)

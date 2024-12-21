@@ -6,8 +6,10 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 11:39:52 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/21 10:41:14 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "./libft/gnl/get_next_line.h"
+

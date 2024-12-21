@@ -1,39 +1,50 @@
-NAME	= 	push_swap
+CFLAGS	= -Wall -Wextra -Werror
+LIBFT	= ./libft/libft.a
+NAME	= push_swap
+CHECKER	= checker
 
-SRC		= 	parse_numbers.c		\
+COMMON	=	parse_numbers.c		\
 			parse_utils.c		\
-			push_swap.c			\
 			opirations_1.c		\
 			opirations_2.c		\
 			opirations_3.c		\
-			other_utils.c		\
+			other_utils.c		
+
+SRC		= 	push_swap.c			\
 			push_to_a.c			\
 			push_to_b.c 		\
 			small_sort.c 		\
 			sorting_utils.c 	
 
-CFLAGS	= -Wall -Wextra -Werror
-LIBFT	= ./libft/libft.a
+BONUS	=	checker.c 						\
+			libft/gnl/get_next_line.c		\
+			libft/gnl/get_next_line_utils.c
+
 OBJ		= $(SRC:.c=.o)
+BOBJ	= $(BONUS:.c=.o)
+COMOBJ 	= $(COMMON:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(COMOBJ)
 	$(MAKE) -C ./libft --silent
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(COMOBJ) $(LIBFT) -o $(NAME)
 
+bonus: $(BOBJ) $(COMOBJ)
+	$(MAKE) -C ./libft --silent
+	$(CC) $(CFLAGS) $(BOBJ) $(COMOBJ) $(LIBFT) -o $(CHECKER)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(MAKE) -C ./libft clean --silent
-	$(RM) $(OBJ)
+	$(RM) $(OBJ) $(COMOBJ) $(BOBJ)
 
 fclean: clean
 	$(MAKE) -C ./libft fclean --silent
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(CHECKER)
 
 re: fclean all
 
 .PHONY: all clean fclean re
-.SECONDARY: $(OBJ)
+.SECONDARY: $(OBJ) $(COMOBJ) $(BOBJ)

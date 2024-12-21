@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/21 14:47:29 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/21 15:49:49 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	ss(t_stack *a, t_stack *b)
 
 void	pb(t_stack *b, t_stack *a)
 {
+	printf("a size from pb: %d\n", a->size);
 	if (a->size == 0)
 		return ;
 	b->top--;

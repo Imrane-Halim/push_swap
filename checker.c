@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/21 14:43:29 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/21 15:50:35 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	exec_op(t_stack *a, t_stack *b, enum e_op op)
 	else if (op == PA)
 		pa(a, b);
 	else if (op == PB)
-		pb(a, b);
+		pb(b, a);
 	else if (op == RA)
 		ra(a);
 	else if (op == RB)
@@ -81,8 +81,7 @@ void	read_operations(t_stack *a, t_stack *b)
 			free_all(a, b);
 			error("Error\n");
 		}
-		else
-			exec_op(a, b, op);
+		exec_op(a, b, op);
 		free(tmp);
 		tmp = get_next_line(STDIN_FILENO);
 	}

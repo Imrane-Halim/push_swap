@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/21 11:43:45 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/21 14:24:28 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,50 @@ enum e_op is_valid_op(char *op)
 		return (RRR);	
 	return (INVALID);
 }
+
+void	exec_op(t_stack *a, t_stack *b, enum e_op op)
+{
+	if (op == SA)
+		sa(a);
+	else if (op == SB)
+		sb(b);
+	else if (op == SS)
+		ss(a, b);
+	else if (op == PA)
+		pa(a, b);
+	else if (op == PB)
+		pb(a, b);
+	else if (op == RA)
+		ra(a);
+	else if (op == RB)
+		rb(b);
+	else if (op == RR)
+		rr(a, b);
+	else if (op == RRA)
+		rra(a);
+	else if (op == RRB)
+		rrb(b);
+	else if (op == RRR)
+		rrr(a, b);	
+}
 void	read_operations(t_stack *a, t_stack *b)
 {
-	char *tmp;
-	(void)a; (void)b;
+	char		*tmp;
+	enum e_op	op;
+	
 	tmp = get_next_line(STDIN_FILENO);
 	while (tmp)
 	{
-		if (is_valid_op(tmp) == INVALID)
+		op = is_valid_op(tmp);
+		if (op == INVALID)
 		{
 			get_next_line(-1);
 			free(tmp);
 			free_all(a, b);
 			error("Error\n");
 		}
+		else
+			exec_op(a, b, op);
 		free(tmp);
 		tmp = get_next_line(STDIN_FILENO);
 	}

@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/21 11:30:19 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/21 14:41:46 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 
 enum e_op
 {
-    INVALID,
-    SA,
-    SB,
-    SS,
-    PA,
-    PB,
-    RA,
-    RB,
-    RR,
-    RRA,
-    RRB,
-    RRR
+	INVALID,
+	SA,
+	SB,
+	SS,
+	PA,
+	PB,
+	RA,
+	RB,
+	RR,
+	RRA,
+	RRB,
+	RRR
 };

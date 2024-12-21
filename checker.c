@@ -6,13 +6,13 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/21 14:24:28 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/21 14:43:29 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-enum e_op is_valid_op(char *op)
+enum e_op	is_valid_op(char *op)
 {
 	if (ft_strncmp(op, "sa\n", 3) == 0)
 		return (SA);
@@ -35,7 +35,7 @@ enum e_op is_valid_op(char *op)
 	else if (ft_strncmp(op, "rrb\n", 4) == 0)
 		return (RRB);
 	else if (ft_strncmp(op, "rrr\n", 4) == 0)
-		return (RRR);	
+		return (RRR);
 	return (INVALID);
 }
 
@@ -62,13 +62,14 @@ void	exec_op(t_stack *a, t_stack *b, enum e_op op)
 	else if (op == RRB)
 		rrb(b);
 	else if (op == RRR)
-		rrr(a, b);	
+		rrr(a, b);
 }
+
 void	read_operations(t_stack *a, t_stack *b)
 {
 	char		*tmp;
 	enum e_op	op;
-	
+
 	tmp = get_next_line(STDIN_FILENO);
 	while (tmp)
 	{
@@ -91,10 +92,9 @@ int	main(int ac, char **av)
 {
 	t_stack	a;
 	t_stack	b;
-	
+
 	if (ac < 2)
 		return (EXIT_SUCCESS);
-	
 	a = init_a(ac, av);
 	b = init_b(a.size);
 	read_operations(&a, &b);

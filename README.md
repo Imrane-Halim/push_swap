@@ -56,6 +56,11 @@ My algorithm is straightforward and easy to implement (take a look at the makefi
 
 And that's it! Your stack is now sorted in less than 5500 operations for 500 numbers, which is enough to achieve a score of 125/125 🎉 (The bonus part only requires 4 functions). I believe this is the easiest algorithm; most of my peers have used complex algorithms like Radix, Bogosort, Turing, or Quicksort, often resulting in hundreds of lines of code due to their use of linked lists. 💻
 
+## Video Demonstration 🎥
+You can view the demonstration of the project in the video below:
+
+[Watch the Video](screenshots/500.mkv)
+
 ## Benchmarking
 To validate the efficiency of the sorting algorithm:
 - Successfully sorted 100 random numbers in fewer than 700 operations. 🏆

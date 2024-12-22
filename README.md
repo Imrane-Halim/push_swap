@@ -59,7 +59,7 @@ And that's it! Your stack is now sorted in less than 5500 operations for 500 num
 ## Video Demonstration 🎥
 You can view the demonstration of the project in the video below:
 
-[Watch the Video](screenshots/500.mkv)
+[Watch the Video](screenshots/500.mp4)
 
 ## Benchmarking
 To validate the efficiency of the sorting algorithm:

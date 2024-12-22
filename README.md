@@ -38,7 +38,7 @@ The following operations are implemented:
 - `rrr`: `rra` and `rrb` at the same time. 🔙🔙
 
 ## Algorithm 🧠
-My algorithm is straightforward and easy to implement:
+My algorithm is straightforward and easy to implement (take a look at the makefile to see how to structure your code):
 
 1. **Initial Sorting**: Start by sorting your numbers using a simple algorithm like Bubble Sort and store the sorted values in an array. This approach is easier than using a linked list. 📊
 

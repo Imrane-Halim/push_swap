@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 10:49:41 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:30:40 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ static void	top_half_to_a(t_stack *a, t_stack *b, int num, int *rank)
 {
 	(*rank)--;
 	while (b->stack[b->top] != num)
-		rb(b);
-	pa(a, b);
+		rb(b, 1);
+	pa(a, b, 1);
 }
 
 static void	bot_half_to_a(t_stack *a, t_stack *b, int num, int *rank)
 {
 	(*rank)--;
 	while (b->stack[b->top] != num)
-		rrb(b);
-	pa(a, b);
+		rrb(b, 1);
+	pa(a, b, 1);
 }
 
 void	push_to_a(t_stack *a, t_stack *b)

@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 10:49:35 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:30:15 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ static void	rotate_rb(t_stack *a, t_stack *b, int num)
 	if (get_pos(num, a) <= (a->size / 2 + a->top))
 	{
 		while (num != a->stack[a->top])
-			ra(a);
-		pb(b, a);
-		rb(b);
+			ra(a, 1);
+		pb(b, a, 1);
+		rb(b, 1);
 	}
 	else
 	{
 		while (num != a->stack[a->top])
-			rra(a);
-		pb(b, a);
-		rb(b);
+			rra(a, 1);
+		pb(b, a, 1);
+		rb(b, 1);
 	}
 }
 
@@ -35,14 +35,14 @@ static void	just_push(t_stack *a, t_stack *b, int num)
 	if (get_pos(num, a) <= (a->size / 2 + a->top))
 	{
 		while (num != a->stack[a->top])
-			ra(a);
-		pb(b, a);
+			ra(a, 1);
+		pb(b, a, 1);
 	}
 	else
 	{
 		while (num != a->stack[a->top])
-			rra(a);
-		pb(b, a);
+			rra(a, 1);
+		pb(b, a, 1);
 	}
 }
 

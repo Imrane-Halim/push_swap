@@ -6,13 +6,13 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 11:19:04 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:26:56 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rrr(t_stack *a, t_stack *b)
+void	rrr(t_stack *a, t_stack *b, int print_msg)
 {
 	int	tmp;
 	int	i;
@@ -35,5 +35,6 @@ void	rrr(t_stack *a, t_stack *b)
 		b->stack[i - 1] = tmp;
 		i--;
 	}
-	write(1, "rrr\n", 4);
+	if (print_msg)
+		write(1, "rrr\n", 4);
 }

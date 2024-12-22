@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/22 13:22:32 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:31:02 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,27 +23,27 @@ void	close_on_error(t_stack *a, t_stack *b, char *op)
 void	exec_op(t_stack *a, t_stack *b, char *op)
 {
 	if (ft_strncmp(op, "sa\n", 3) == 0)
-		sa(a);
+		sa(a, 0);
 	else if (ft_strncmp(op, "sb\n", 3) == 0)
-		sb(b);
+		sb(b, 0);
 	else if (ft_strncmp(op, "ss\n", 3) == 0)
-		ss(a, b);
+		ss(a, b, 0);
 	else if (ft_strncmp(op, "pa\n", 3) == 0)
-		pa(a, b);
+		pa(a, b, 0);
 	else if (ft_strncmp(op, "pb\n", 3) == 0)
-		pb(b, a);
+		pb(b, a, 0);
 	else if (ft_strncmp(op, "ra\n", 3) == 0)
-		ra(a);
+		ra(a, 0);
 	else if (ft_strncmp(op, "rb\n", 3) == 0)
-		rb(b);
+		rb(b, 0);
 	else if (ft_strncmp(op, "rr\n", 3) == 0)
-		rr(a, b);
+		rr(a, b, 0);
 	else if (ft_strncmp(op, "rra\n", 4) == 0)
-		rra(a);
+		rra(a, 0);
 	else if (ft_strncmp(op, "rrb\n", 4) == 0)
-		rrb(b);
+		rrb(b, 0);
 	else if (ft_strncmp(op, "rrr\n", 4) == 0)
-		rrr(a, b);
+		rrr(a, b, 0);
 	else
 		close_on_error(a, b, op);
 }

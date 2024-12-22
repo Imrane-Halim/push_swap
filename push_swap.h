@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 10:49:47 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:27:47 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,20 @@ char	*join_args(int ac, char **av);
 t_stack	init_a(int ac, char **av);
 
 //----- sorting rules obviosly
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
+void	sa(t_stack *a, int print_msg);
+void	sb(t_stack *b, int print_msg);
+void	ss(t_stack *a, t_stack *b, int print_msg);
 
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *b, t_stack *a);
+void	pa(t_stack *a, t_stack *b, int print_msg);
+void	pb(t_stack *b, t_stack *a, int print_msg);
 
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
+void	ra(t_stack *a, int print_msg);
+void	rb(t_stack *b, int print_msg);
+void	rr(t_stack *a, t_stack *b, int print_msg);
 
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+void	rra(t_stack *a, int print_msg);
+void	rrb(t_stack *b, int print_msg);
+void	rrr(t_stack *a, t_stack *b, int print_msg);
 
 //----- sorting utils
 int		get_rank(int num, int *sorted, int len);

@@ -6,13 +6,13 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/21 15:49:49 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:28:43 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_stack *a)
+void	sa(t_stack *a, int print_msg)
 {
 	int	tmp;
 
@@ -22,10 +22,11 @@ void	sa(t_stack *a)
 		a->stack[a->top] = a->stack[a->top + 1];
 		a->stack[a->top + 1] = tmp;
 	}
-	write(1, "sa\n", 3);
+	if (print_msg)
+		write(1, "sa\n", 3);
 }
 
-void	sb(t_stack *b)
+void	sb(t_stack *b, int print_msg)
 {
 	int	tmp;
 
@@ -35,10 +36,11 @@ void	sb(t_stack *b)
 		b->stack[b->top] = b->stack[b->top + 1];
 		b->stack[b->top + 1] = tmp;
 	}
-	write(1, "sb\n", 3);
+	if (print_msg)
+		write(1, "sb\n", 3);
 }
 
-void	ss(t_stack *a, t_stack *b)
+void	ss(t_stack *a, t_stack *b, int print_msg)
 {
 	int	tmp;
 
@@ -54,12 +56,12 @@ void	ss(t_stack *a, t_stack *b)
 		b->stack[b->top] = b->stack[b->top + 1];
 		b->stack[b->top + 1] = tmp;
 	}
-	write(1, "ss\n", 3);
+	if (print_msg)
+		write(1, "ss\n", 3);
 }
 
-void	pb(t_stack *b, t_stack *a)
+void	pb(t_stack *b, t_stack *a, int print_msg)
 {
-	printf("a size from pb: %d\n", a->size);
 	if (a->size == 0)
 		return ;
 	b->top--;
@@ -67,10 +69,11 @@ void	pb(t_stack *b, t_stack *a)
 	b->stack[b->top] = a->stack[a->top];
 	a->top++;
 	a->size--;
-	write(1, "pb\n", 3);
+	if (print_msg)
+		write(1, "pb\n", 3);
 }
 
-void	pa(t_stack *a, t_stack *b)
+void	pa(t_stack *a, t_stack *b, int print_msg)
 {
 	if (b->size == 0)
 		return ;
@@ -79,5 +82,6 @@ void	pa(t_stack *a, t_stack *b)
 	a->stack[a->top] = b->stack[b->top];
 	b->top++;
 	b->size--;
-	write(1, "pa\n", 3);
+	if (print_msg)
+		write(1, "pa\n", 3);
 }

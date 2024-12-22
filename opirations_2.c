@@ -6,13 +6,13 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 11:18:30 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:26:50 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ra(t_stack *a)
+void	ra(t_stack *a, int print_msg)
 {
 	int	tmp;
 	int	i;
@@ -27,10 +27,11 @@ void	ra(t_stack *a)
 		a->stack[i + a->top + 1] = tmp;
 		i++;
 	}
-	write(1, "ra\n", 3);
+	if (print_msg)
+		write(1, "ra\n", 3);
 }
 
-void	rb(t_stack *b)
+void	rb(t_stack *b, int print_msg)
 {
 	int	tmp;
 	int	i;
@@ -45,10 +46,11 @@ void	rb(t_stack *b)
 		b->stack[i + b->top + 1] = tmp;
 		i++;
 	}
-	write(1, "rb\n", 3);
+	if (print_msg)
+		write(1, "rb\n", 3);
 }
 
-void	rr(t_stack *a, t_stack *b)
+void	rr(t_stack *a, t_stack *b, int print_msg)
 {
 	int	tmp;
 	int	i;
@@ -71,10 +73,11 @@ void	rr(t_stack *a, t_stack *b)
 		a->stack[i + a->top + 1] = tmp;
 		i++;
 	}
-	write(1, "rr\n", 3);
+	if (print_msg)
+		write(1, "rr\n", 3);
 }
 
-void	rra(t_stack *a)
+void	rra(t_stack *a, int print_msg)
 {
 	int	tmp;
 	int	i;
@@ -89,10 +92,11 @@ void	rra(t_stack *a)
 		a->stack[i - 1] = tmp;
 		i--;
 	}
-	write(1, "rra\n", 4);
+	if (print_msg)
+		write(1, "rra\n", 4);
 }
 
-void	rrb(t_stack *b)
+void	rrb(t_stack *b, int print_msg)
 {
 	int	tmp;
 	int	i;
@@ -107,5 +111,6 @@ void	rrb(t_stack *b)
 		b->stack[i - 1] = tmp;
 		i--;
 	}
-	write(1, "rrb\n", 4);
+	if (print_msg)
+		write(1, "rrb\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/22 13:19:03 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/22 13:22:32 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	close_on_error(t_stack *a, t_stack *b, char *op)
 {
+	get_next_line(-1);
 	free_all(a, b);
 	free(op);
-	get_next_line(-1);
 	error("Error\n");
 }
 
@@ -56,8 +56,8 @@ void	read_operations(t_stack *a, t_stack *b)
 	while (tmp)
 	{
 		exec_op(a, b, tmp);
-		tmp = get_next_line(STDIN_FILENO);
 		free(tmp);
+		tmp = get_next_line(STDIN_FILENO);
 	}
 }
 
@@ -75,5 +75,6 @@ int	main(int ac, char **av)
 		ft_putendl_fd("OK", 1);
 	else
 		ft_putendl_fd("KO", 1);
+	free_all(&a, &b);
 	return (0);
 }

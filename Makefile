@@ -3,24 +3,24 @@ LIBFT	= ./libft/libft.a
 NAME	= push_swap
 CHECKER	= checker
 
-COMMON	=	parse_numbers.c		\
-			parse_utils.c		\
-			opirations_1.c		\
-			opirations_2.c		\
-			opirations_3.c		\
-			other_utils.c		
+COMMON		=	parse_numbers.c		\
+				parse_utils.c		\
+				opirations_1.c		\
+				opirations_2.c		\
+				opirations_3.c		\
+				other_utils.c		
 
-SRC		= 	push_swap.c			\
-			push_to_a.c			\
-			push_to_b.c 		\
-			small_sort.c 		\
-			sorting_utils.c 	
+MANDATORY	= 	push_swap.c			\
+				push_to_a.c			\
+				push_to_b.c 		\
+				small_sort.c 		\
+				sorting_utils.c 	
 
-BONUS	=	checker.c 						\
-			libft/gnl/get_next_line.c		\
-			libft/gnl/get_next_line_utils.c
+BONUS		=	checker.c 						\
+				libft/gnl/get_next_line.c		\
+				libft/gnl/get_next_line_utils.c
 
-OBJ		= $(SRC:.c=.o)
+OBJ		= $(MANDATORY:.c=.o)
 BOBJ	= $(BONUS:.c=.o)
 COMOBJ 	= $(COMMON:.c=.o)
 

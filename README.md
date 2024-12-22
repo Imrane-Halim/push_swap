@@ -37,6 +37,25 @@ The following operations are implemented:
 - `rrb`: Reverse rotate stack `b`. 🔙
 - `rrr`: `rra` and `rrb` at the same time. 🔙🔙
 
+## Algorithm 🧠
+My algorithm is straightforward and easy to implement:
+
+1. **Initial Sorting**: Start by sorting your numbers using a simple algorithm like Bubble Sort and store the sorted values in an array. This approach is easier than using a linked list. 📊
+
+2. **Define a Range**: Create a range with `min = 1` and `max = ft_sqrt(STACK_SIZE) + STACK_SIZE / 500 + 5`. 📏
+
+3. **Push All Numbers to Stack B**:
+    - If a number's position is less than where it should be when the stack is sorted (compare with the sorted array created earlier), meaning it is less than `min`, or if its position is between `min` and `max`, move the number to the top of Stack A and then push it to Stack B. 
+    - Make sure to check if the target number is in the top half or bottom half of the stack, and execute the appropriate operation. 🔄
+    - Reset your pointer to the top of Stack A and move your range by 1 (`min++`, `max++`).
+    - If a number's position is greater than `max`, move to the next number in Stack A.
+
+4. **Push Back All Numbers to Stack A**:
+    - This part is quite simple. Find the largest number in Stack B, move it to the top, and then push it back to Stack A. 
+    - Don’t forget to check if the number is in the top or bottom half of the stack, using `rb` or `rrb` as needed. 🔼
+
+And that's it! Your stack is now sorted in less than 5500 operations for 500 numbers, which is enough to achieve a score of 125/125 🎉 (The bonus part only requires 4 functions). I believe this is the easiest algorithm; most of my peers have used complex algorithms like Radix, Bogosort, Turing, or Quicksort, often resulting in hundreds of lines of code due to their use of linked lists. 💻
+
 ## Benchmarking
 To validate the efficiency of the sorting algorithm:
 - Successfully sorted 100 random numbers in fewer than 700 operations. 🏆

@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/23 11:19:35 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/23 15:10:22 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include "../libft/libft.h"
 
 typedef struct s_stack

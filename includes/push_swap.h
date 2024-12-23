@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/22 13:27:47 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/23 11:19:35 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 # include <stdio.h>
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct s_stack
 {

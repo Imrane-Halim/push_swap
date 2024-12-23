@@ -6,9 +6,9 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/22 14:11:45 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/23 11:20:15 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "./libft/gnl/get_next_line.h"
+#include "../libft/gnl/get_next_line.h"

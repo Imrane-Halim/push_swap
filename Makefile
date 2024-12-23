@@ -2,21 +2,22 @@ CFLAGS	= -Wall -Wextra -Werror
 LIBFT	= ./libft/libft.a
 NAME	= push_swap
 CHECKER	= checker
+INC		= ./includes/
 
-COMMON		=	parse_numbers.c		\
-				parse_utils.c		\
-				opirations_1.c		\
-				opirations_2.c		\
-				opirations_3.c		\
-				other_utils.c		
+COMMON		=	common/parse_numbers.c		\
+				common/parse_utils.c		\
+				common/opirations_1.c		\
+				common/opirations_2.c		\
+				common/opirations_3.c		\
+				common/other_utils.c		
 
-MANDATORY	= 	push_swap.c			\
-				push_to_a.c			\
-				push_to_b.c 		\
-				small_sort.c 		\
-				sorting_utils.c 	
+MANDATORY	= 	mandatory/push_swap.c		\
+				mandatory/push_to_a.c		\
+				mandatory/push_to_b.c 		\
+				mandatory/small_sort.c 		\
+				mandatory/sorting_utils.c 	
 
-BONUS		=	checker.c 						\
+BONUS		=	bonus/checker.c 				\
 				libft/gnl/get_next_line.c		\
 				libft/gnl/get_next_line_utils.c
 
@@ -28,13 +29,14 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(COMOBJ)
 	$(MAKE) -C ./libft --silent
-	$(CC) $(CFLAGS) $(OBJ) $(COMOBJ) $(LIBFT) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(COMOBJ) $(LIBFT) -I$(INC) -o $(NAME)
 
 bonus: $(BOBJ) $(COMOBJ)
 	$(MAKE) -C ./libft --silent
-	$(CC) $(CFLAGS) $(BOBJ) $(COMOBJ) $(LIBFT) -o $(CHECKER)
+	$(CC) $(CFLAGS) $(BOBJ) $(COMOBJ) $(LIBFT) -I$(INC) -o $(CHECKER)
+
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
 
 clean:
 	$(MAKE) -C ./libft clean --silent
@@ -46,5 +48,5 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 .SECONDARY: $(OBJ) $(COMOBJ) $(BOBJ)

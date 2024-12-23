@@ -2,6 +2,7 @@
 *.o
 *.a
 push_swap
+checker
 visualizer/
 #push_swap_tester/
 #push_swap_tester/**

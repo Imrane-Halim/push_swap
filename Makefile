@@ -27,16 +27,19 @@ COMOBJ 	= $(COMMON:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(COMOBJ)
+$(LIBFT):
 	$(MAKE) -C ./libft --silent
+
+$(NAME): $(OBJ) $(COMOBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(COMOBJ) $(LIBFT) -I$(INC) -o $(NAME)
 
-bonus: $(BOBJ) $(COMOBJ)
-	$(MAKE) -C ./libft --silent
+$(CHECKER): $(BOBJ) $(COMOBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(BOBJ) $(COMOBJ) $(LIBFT) -I$(INC) -o $(CHECKER)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -I$(INC) -c $< -o $@
+
+bonus: $(CHECKER)
 
 clean:
 	$(MAKE) -C ./libft clean --silent

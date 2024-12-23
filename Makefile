@@ -2,26 +2,26 @@ CFLAGS	= -Wall -Wextra -Werror
 LIBFT	= ./libft/libft.a
 NAME	= push_swap
 CHECKER	= checker
-INC		= ./includes/
+INC	= ./includes/
 
-COMMON		=	common/parse_numbers.c		\
-				common/parse_utils.c		\
-				common/opirations_1.c		\
-				common/opirations_2.c		\
-				common/opirations_3.c		\
-				common/other_utils.c		
+COMMON	= 	common/parse_numbers.c		\
+		common/parse_utils.c		\
+		common/opirations_1.c		\
+		common/opirations_2.c		\
+		common/opirations_3.c		\
+		common/other_utils.c		
 
-MANDATORY	= 	mandatory/push_swap.c		\
-				mandatory/push_to_a.c		\
-				mandatory/push_to_b.c 		\
-				mandatory/small_sort.c 		\
-				mandatory/sorting_utils.c 	
+MANDATORY = 	mandatory/push_swap.c		\
+		mandatory/push_to_a.c		\
+		mandatory/push_to_b.c 		\
+		mandatory/small_sort.c 		\
+		mandatory/sorting_utils.c 	
 
-BONUS		=	bonus/checker.c 				\
-				libft/gnl/get_next_line.c		\
-				libft/gnl/get_next_line_utils.c
+BONUS	 =	bonus/checker.c 		\
+		libft/gnl/get_next_line.c	\
+		libft/gnl/get_next_line_utils.c
 
-OBJ		= $(MANDATORY:.c=.o)
+OBJ	= $(MANDATORY:.c=.o)
 BOBJ	= $(BONUS:.c=.o)
 COMOBJ 	= $(COMMON:.c=.o)
 

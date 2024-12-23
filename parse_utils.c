@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 10:49:57 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/23 10:33:31 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,13 @@ void	check_nums(char **av)
 	while (av[i])
 	{
 		if (!is_valid(av[i]) || !check_range(av[i]))
+		{
+			i = 0;
+			while (av[i])
+				free(av[i++]);
+			free(av);
 			error("Error\n");
+		}
 		i++;
 	}
 }

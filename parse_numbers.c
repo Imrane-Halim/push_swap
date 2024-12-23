@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/21 11:33:49 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/23 10:40:16 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,30 +45,43 @@ static void	check_duplicates(int *nums, int len)
 	}
 }
 
-t_stack	init_a(int ac, char **av)
+void    init_array(t_stack *a, char **args)
 {
-	char	*s;
-	char	**args;
-	t_stack	a;
-	int		i;
+    int i;
 
-	s = join_args(ac, av);
-	args = ft_split(s, ' ');
-	check_nums(args);
-	a.stack = malloc(sizeof(int) * (count_nums(args)));
-	i = 0;
-	while (args[i])
-	{
-		a.stack[i] = ft_atoi(args[i]);
-		free(args[i]);
-		i++;
-	}
-	a.top = 0;
-	a.size = i;
-	a.capacity = i;
-	free(s);
-	free(args);
-	check_duplicates(a.stack, a.size);
-	mysort(&a);
-	return (a);
+    a->stack = malloc(sizeof(int) * (count_nums(args)));
+    i = 0;
+    while (args[i])
+    {
+        a->stack[i] = ft_atoi(args[i]);
+        free(args[i]);
+        i++;
+    }
+    a->top = 0;
+    a->size = i;
+    a->capacity = i;
+    free(args);
+    check_duplicates(a->stack, a->size);
+    mysort(a);
+}
+
+t_stack    init_a(int ac, char **av)
+{
+    char    *s;
+    char    **args;
+    t_stack a;
+
+    s = join_args(ac, av);
+    if (!s)
+        error("Error\n");
+    args = ft_split(s, ' ');
+    if (!args)
+    {
+        free(s);
+        error("Error\n");
+    }
+    free(s);
+    check_nums(args);
+    init_array(&a, args);
+    return (a);
 }

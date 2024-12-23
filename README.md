@@ -7,6 +7,7 @@ The `push_swap` project is a sorting algorithm challenge where the goal is to so
 - [Features](#features) ✨
 - [How It Works](#how-it-works) ⚙️
 - [Operations](#operations) 🔄
+- [Algorithm](#algorithm) 🧠
 - [Benchmarking](#benchmarking) 📈
 - [Usage](#usage) 📋
 - [Bonus Part](#bonus-part) 🎁

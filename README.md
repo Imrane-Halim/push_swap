@@ -11,8 +11,6 @@ The `push_swap` project is a sorting algorithm challenge where the goal is to so
 - [Benchmarking](#benchmarking) 📈
 - [Usage](#usage) 📋
 - [Bonus Part](#bonus-part) 🎁
-- [Contributing](#contributing) 🤝
-- [License](#license) 📜
 
 ## Features
 - Efficient sorting of integers using two stacks.

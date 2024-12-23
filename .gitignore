@@ -4,5 +4,6 @@
 push_swap
 checker
 visualizer/
+imgui.ini
 #push_swap_tester/
 #push_swap_tester/**

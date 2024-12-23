@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/22 13:30:40 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/23 20:22:34 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	push_to_a(t_stack *a, t_stack *b)
 	{
 		top = b->top;
 		bot = b->top + b->size - 1;
-		while (top <= bot && rank > 0)
+		while (top <= bot)
 		{
 			if (get_rank(b->stack[top], a->sorted, a->capacity) == rank)
 			{

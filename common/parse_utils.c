@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/23 10:33:31 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/24 20:51:47 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	is_valid(char *s)
 		return (0);
 	if (s[i] == '-' || s[i] == '+')
 		i++;
+	if (!ft_isdigit(s[i]))
+		return (0);
 	while (s[i])
 	{
 		if (!ft_isdigit(s[i]))

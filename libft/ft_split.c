@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:33:02 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/06 11:27:59 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/26 20:38:14 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ static int	count_words(char const *s, char c)
 	count = 0;
 	while (s[i])
 	{
-		if (s[i] == c || s[i] == '\t')
+		if (s[i] == c)
 			i++;
 		else
 		{
 			count++;
-			while (s[i] && s[i] != c && s[i] != '\t')
+			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
@@ -37,10 +37,10 @@ static char	*get_word(char const *s, char c, int *i)
 {
 	int	start;
 
-	while ((s[*i] == '\t' || s[*i] == c) && s[*i])
+	while (s[*i] == c && s[*i])
 		(*i)++;
 	start = *i;
-	while ((s[*i] != '\t' && s[*i] != c) && s[*i])
+	while (s[*i] != c && s[*i])
 		(*i)++;
 	return (ft_substr(s, start, *i - start));
 }

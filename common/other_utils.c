@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/31 10:51:05 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/31 11:08:05 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack	init_b(t_stack a)
 	if (!b.stack)
 	{
 		free(a.stack);
+		free(a.sorted);
 		error("Error\n");
 	}
 	b.size = 0;

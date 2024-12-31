@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/23 15:10:22 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/31 10:50:46 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ void	sort(t_stack *a, t_stack *b);
 
 //----- some other utils
 int		ft_sqrt(int nb);
-t_stack	init_b(int a_size);
+t_stack	init_b(t_stack a);
 int		is_sorted(t_stack a);
 void	mysort(t_stack *a);
 void	free_all(t_stack *a, t_stack *b);
+int		*new_sorted_array(t_stack *a);
 
 #endif

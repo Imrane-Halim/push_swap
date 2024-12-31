@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/20 10:49:51 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/31 10:52:54 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int ac, char **av)
 	if (ac < 2)
 		return (EXIT_FAILURE);
 	a = init_a(ac, av);
-	b = init_b(a.size);
+	b = init_b(a);
 	if (!is_sorted(a))
 		sort(&a, &b);
 	free_all(&a, &b);

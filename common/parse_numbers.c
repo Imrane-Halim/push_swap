@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/23 11:19:53 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/31 10:57:39 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,46 @@ static void	check_duplicates(int *nums, int len)
 	}
 }
 
+void	mysort(t_stack *a)
+{
+	int	tmp;
+	int	i;
+	int	j;
+	int	*sorted;
+
+	sorted = new_sorted_array(a);
+	i = 0;
+	while (i < a->size - 1)
+	{
+		j = 0;
+		while (j < a->size - i - 1)
+		{
+			if (sorted[j] > sorted[j + 1])
+			{
+				tmp = sorted[j];
+				sorted[j] = sorted[j + 1];
+				sorted[j + 1] = tmp;
+			}
+			j++;
+		}
+		i++;
+	}
+	a->sorted = sorted;
+}
+
 void	init_array(t_stack *a, char **args)
 {
 	int	i;
 
 	a->stack = malloc(sizeof(int) * (count_nums(args)));
+	if (!a->stack)
+	{
+		i = 0;
+		while (args[i])
+			free(args[i++]);
+		free(args);
+		error("Error\n");
+	}
 	i = 0;
 	while (args[i])
 	{

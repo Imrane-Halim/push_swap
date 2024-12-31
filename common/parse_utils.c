@@ -6,7 +6,7 @@
 /*   By: ihalim <ihalim@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/22 10:31:53 by ihalim            #+#    #+#             */
-/*   Updated: 2024/12/25 09:41:33 by ihalim           ###   ########.fr       */
+/*   Updated: 2024/12/31 10:38:41 by ihalim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ int	check_range(char *s)
 {
 	long	n;
 
+	if (ft_strlen(s) > 11)
+		return (0);
 	n = ft_atol(s);
 	return (n >= INT_MIN && n <= INT_MAX);
 }

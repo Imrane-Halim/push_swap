@@ -44,7 +44,7 @@ My algorithm is straightforward and easy to implement (take a look at the makefi
 2. **Define a Range**: Create a range with `min = 1` and `max = ft_sqrt(STACK_SIZE) + STACK_SIZE / 500 + 5`. 📏
 
 3. **Push All Numbers to Stack B**:
-    - If a number's position is less than where it should be when the stack is sorted (compare with the sorted array created earlier), meaning it is less than `min`, or if its position is between `min` and `max`, move the number to the top of Stack A and then push it to Stack B. 
+    - If a number's position is less than where it should be when the stack is sorted (compare with the sorted array created earlier), meaning it is less than `min` then push to b and rotate to bottom, or if its position is between `min` and `max`, just push it to Stack B. 
     - Make sure to check if the target number is in the top half or bottom half of the stack, and execute the appropriate operation. 🔄
     - Reset your pointer to the top of Stack A and move your range by 1 (`min++`, `max++`).
     - If a number's position is greater than `max`, move to the next number in Stack A.
